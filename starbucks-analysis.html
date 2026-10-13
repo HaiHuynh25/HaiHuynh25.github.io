@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Starbucks Sales Data Analysis | Hai Huynh</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root { --teal:#5fb3a1; --teal-dark:#4a9887; --ink:#1c1f23; --muted:#5d6670; --line:#dfe4e8; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:Georgia,"Times New Roman",serif; color:var(--ink); background:#f7f9fa; line-height:1.7; font-size:17px; }
+  .wrap { max-width:1000px; margin:0 auto; padding:40px 6% 70px; }
+  .back { font-family:"Montserrat",sans-serif; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--teal); text-decoration:none; }
+  .back:hover { text-decoration:underline; }
+  h1 { font-family:"Roboto Slab",serif; font-weight:500; font-size:clamp(1.8rem,5vw,2.6rem); margin:18px 0 4px; }
+  .tech { font-family:"Montserrat",sans-serif; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--teal); }
+  .note { background:#fff4ce; border:1px solid #f0dc99; padding:12px 16px; margin:22px 0; font-family:"Montserrat",sans-serif; font-size:14px; }
+  h2 { font-family:"Montserrat",sans-serif; font-weight:500; font-size:18px; letter-spacing:2px; text-transform:uppercase; margin:46px 0 6px; }
+  .rule { width:50px; height:3px; background:var(--teal); margin-bottom:22px; }
+  p.lead { color:var(--muted); }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin-top:22px; }
+  .card { background:#fff; border:1px solid var(--line); padding:20px; }
+  .card .k { font-family:"Montserrat",sans-serif; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
+  .card .v { font-family:"Roboto Slab",serif; font-size:26px; margin-top:4px; }
+  .card .s { font-size:14px; color:var(--muted); }
+  .panel { background:#fff; border:1px solid var(--line); padding:24px; }
+  .hrow { display:grid; grid-template-columns:170px 1fr 80px; gap:12px; align-items:center; margin:9px 0; font-family:"Montserrat",sans-serif; font-size:13px; }
+  .track { background:#eef2f3; height:18px; } .fill { background:var(--teal); height:100%; }
+  .hv { text-align:right; }
+  .weekly { display:flex; gap:14px; align-items:flex-end; height:240px; padding-top:10px; }
+  .wc { flex:1; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; font-family:"Montserrat",sans-serif; font-size:12px; }
+  .col { width:100%; background:#a9d6cc; margin:6px 0; } .col.hi { background:var(--teal-dark); }
+  .wl { font-weight:500; } .wv { color:var(--muted); }
+  svg { width:100%; height:auto; } .grid { stroke:#e3e7ea; stroke-width:1; } .ax { font-family:"Montserrat",sans-serif; font-size:11px; fill:#6b747c; }
+  .tablewrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-family:"Montserrat",sans-serif; font-size:13px; background:#fff; }
+  th { background:var(--teal); color:#fff; font-weight:500; padding:10px 12px; text-align:right; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  ul.steps { margin-left:22px; color:var(--muted); }
+  .btns { display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+  .btn { font-family:"Montserrat",sans-serif; font-size:14px; letter-spacing:.5px; text-transform:uppercase; color:var(--teal); border:3px solid var(--teal); padding:12px 26px; text-decoration:none; background:#fff; }
+  .btn:hover { background:var(--teal); color:#fff; }
+  @media (max-width:640px) { .hrow { grid-template-columns:110px 1fr 64px; font-size:12px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html#projects">&larr; Back to portfolio</a>
+  <h1>Starbucks Sales Data Analysis</h1>
+  <p class="tech">Microsoft Excel &bull; Data Analysis</p>
+
+  <div class="note"><strong>Sample data:</strong> this project uses simulated coffee-shop sales (Aug&ndash;Oct 2025) created for practice. It is not real Starbucks data.</div>
+
+  <p class="lead">I built a daily sales table in Excel and used formulas (SUMIFS, COUNTIFS, AVERAGEIFS, INDEX/MATCH) to summarize revenue and units by product, day of week, and month, then estimated daily sales for products such as the Cappuccino and the Pumpkin Spice Latte.</p>
+
+  <div class="cards">
+    <div class="card"><div class="k">Total revenue</div><div class="v">$171,765</div><div class="s">35,644 units sold</div></div>
+    <div class="card"><div class="k">Top product</div><div class="v">Caffe Latte</div><div class="s">18.1% of revenue</div></div>
+    <div class="card"><div class="k">Busiest day</div><div class="v">Sat</div><div class="s">$2,131 avg &middot; slowest: Tue</div></div>
+    <div class="card"><div class="k">Pumpkin Spice Latte</div><div class="v">74 / day</div><div class="s">&asymp; $428 daily sales</div></div>
+  </div>
+
+  <h2>Revenue by product</h2><div class="rule"></div>
+  <div class="panel"><div class="hrow"><span class="hl">Caffe Latte</span><div class="track"><div class="fill" style="width:100.0%"></div></div><span class="hv">$31,032</span></div><div class="hrow"><span class="hl">Pumpkin Spice Latte</span><div class="track"><div class="fill" style="width:92.4%"></div></div><span class="hv">$28,687</span></div><div class="hrow"><span class="hl">Caramel Macchiato</span><div class="track"><div class="fill" style="width:73.0%"></div></div><span class="hv">$22,645</span></div><div class="hrow"><span class="hl">Cappuccino</span><div class="track"><div class="fill" style="width:70.7%"></div></div><span class="hv">$21,950</span></div><div class="hrow"><span class="hl">Iced Coffee</span><div class="track"><div class="fill" style="width:67.9%"></div></div><span class="hv">$21,061</span></div><div class="hrow"><span class="hl">Cold Brew</span><div class="track"><div class="fill" style="width:59.4%"></div></div><span class="hv">$18,436</span></div><div class="hrow"><span class="hl">Mocha</span><div class="track"><div class="fill" style="width:55.8%"></div></div><span class="hv">$17,320</span></div><div class="hrow"><span class="hl">Americano</span><div class="track"><div class="fill" style="width:34.3%"></div></div><span class="hv">$10,635</span></div></div>
+
+  <h2>Average revenue by day of week</h2><div class="rule"></div>
+  <div class="panel"><div class="weekly"><div class="wc"><span class="wv">$1,790</span><div class="col" style="height:84.0%"></div><span class="wl">Mon</span></div><div class="wc"><span class="wv">$1,779</span><div class="col" style="height:83.5%"></div><span class="wl">Tue</span></div><div class="wc"><span class="wv">$1,804</span><div class="col" style="height:84.6%"></div><span class="wl">Wed</span></div><div class="wc"><span class="wv">$1,807</span><div class="col" style="height:84.8%"></div><span class="wl">Thu</span></div><div class="wc"><span class="wv">$1,798</span><div class="col" style="height:84.4%"></div><span class="wl">Fri</span></div><div class="wc"><span class="wv">$2,131</span><div class="col hi" style="height:100.0%"></div><span class="wl">Sat</span></div><div class="wc"><span class="wv">$1,967</span><div class="col" style="height:92.3%"></div><span class="wl">Sun</span></div></div></div>
+  <p class="lead" style="margin-top:12px">Weekends are the busiest: Sat averages $2,131 per day versus $1,779 on Tue.</p>
+
+  <h2>Daily revenue trend</h2><div class="rule"></div>
+  <div class="panel"><svg viewBox="0 0 760 260" role="img" aria-label="Daily total revenue line chart"><line x1="56" x2="746" y1="226.0" y2="226.0" class="grid"/><text x="48" y="230.0" class="ax" text-anchor="end">$0</text><line x1="56" x2="746" y1="173.0" y2="173.0" class="grid"/><text x="48" y="177.0" class="ax" text-anchor="end">$644</text><line x1="56" x2="746" y1="120.0" y2="120.0" class="grid"/><text x="48" y="124.0" class="ax" text-anchor="end">$1,289</text><line x1="56" x2="746" y1="67.0" y2="67.0" class="grid"/><text x="48" y="71.0" class="ax" text-anchor="end">$1,933</text><line x1="56" x2="746" y1="14.0" y2="14.0" class="grid"/><text x="48" y="18.0" class="ax" text-anchor="end">$2,577</text><text x="56.0" y="250" class="ax" text-anchor="middle">Aug 1</text><text x="291.1" y="250" class="ax" text-anchor="middle">Sep 1</text><text x="518.5" y="250" class="ax" text-anchor="middle">Oct 1</text><polyline points="56.0,105.0 63.6,77.4 71.2,91.0 78.7,103.2 86.3,108.1 93.9,102.2 101.5,98.8 109.1,105.4 116.7,75.2 124.2,91.1 131.8,98.2 139.4,108.1 147.0,98.8 154.6,98.3 162.2,99.5 169.7,75.7 177.3,88.2 184.9,104.9 192.5,93.9 200.1,101.9 207.6,106.1 215.2,102.6 222.8,74.9 230.4,82.1 238.0,101.1 245.6,103.8 253.1,99.6 260.7,90.1 268.3,91.7 275.9,58.4 283.5,77.6 291.1,76.1 298.6,82.6 306.2,77.4 313.8,63.9 321.4,64.1 329.0,45.2 336.5,55.5 344.1,73.7 351.7,71.8 359.3,65.4 366.9,68.9 374.5,71.6 382.0,33.6 389.6,48.7 397.2,68.0 404.8,67.9 412.4,64.8 420.0,70.8 427.5,64.8 435.1,40.9 442.7,43.4 450.3,70.8 457.9,70.2 465.5,70.9 473.0,67.2 480.6,65.8 488.2,29.7 495.8,58.6 503.4,72.7 510.9,63.6 518.5,64.8 526.1,69.0 533.7,68.2 541.3,38.5 548.9,48.8 556.4,56.7 564.0,66.2 571.6,70.0 579.2,66.3 586.8,66.2 594.4,35.6 601.9,39.2 609.5,65.0 617.1,71.1 624.7,61.7 632.3,66.6 639.8,60.0 647.4,38.1 655.0,53.6 662.6,67.5 670.2,68.9 677.8,62.9 685.3,61.8 692.9,63.9 700.5,36.0 708.1,56.8 715.7,66.1 723.3,59.7 730.8,68.7 738.4,78.4 746.0,65.0" fill="none" stroke="#5fb3a1" stroke-width="2" stroke-linejoin="round"/></svg></div>
+
+  <h2>Product details</h2><div class="rule"></div>
+  <div class="tablewrap"><table>
+    <tr><th>Product</th><th>Category</th><th>Units</th><th>Revenue</th><th>Share</th><th>Avg daily units</th><th>Est. daily sales</th></tr>
+    <tr><td>Caffe Latte</td><td>Hot Espresso</td><td>6,269</td><td>$31,032</td><td>18.1%</td><td>68.1</td><td>$337.30</td></tr><tr><td>Cappuccino</td><td>Hot Espresso</td><td>4,621</td><td>$21,950</td><td>12.8%</td><td>50.2</td><td>$238.58</td></tr><tr><td>Caramel Macchiato</td><td>Hot Espresso</td><td>4,155</td><td>$22,645</td><td>13.2%</td><td>45.2</td><td>$246.14</td></tr><tr><td>Americano</td><td>Hot Espresso</td><td>2,836</td><td>$10,635</td><td>6.2%</td><td>30.8</td><td>$115.60</td></tr><tr><td>Mocha</td><td>Hot Espresso</td><td>3,299</td><td>$17,320</td><td>10.1%</td><td>35.9</td><td>$188.26</td></tr><tr><td>Pumpkin Spice Latte</td><td>Seasonal</td><td>4,989</td><td>$28,687</td><td>16.7%</td><td>74.5</td><td>$428.16</td></tr><tr><td>Iced Coffee</td><td>Cold Drinks</td><td>5,332</td><td>$21,061</td><td>12.3%</td><td>58.0</td><td>$228.93</td></tr><tr><td>Cold Brew</td><td>Cold Drinks</td><td>4,143</td><td>$18,436</td><td>10.7%</td><td>45.0</td><td>$200.40</td></tr>
+  </table></div>
+  <p class="lead" style="margin-top:12px">Estimated daily sales = average daily units &times; unit price. The Pumpkin Spice Latte averages 74.5 units ($428.16) per day compared with 50.2 units ($238.58) for the Cappuccino.</p>
+
+  <h2>Revenue by month</h2><div class="rule"></div>
+  <div class="tablewrap"><table>
+    <tr><th>Month</th><th>Revenue</th><th>Units</th><th>Days</th><th>Avg daily revenue</th></tr>
+    <tr><td>Aug</td><td>$49,756</td><td>10,748</td><td>31</td><td>$1,605</td></tr><tr><td>Sep</td><td>$59,463</td><td>12,222</td><td>30</td><td>$1,982</td></tr><tr><td>Oct</td><td>$62,546</td><td>12,674</td><td>31</td><td>$2,018</td></tr>
+  </table></div>
+
+  <h2>What I learned</h2><div class="rule"></div>
+  <ul class="steps">
+    <li>Structuring raw data into a clean table that formulas can summarize.</li>
+    <li>Summarizing with SUMIFS, COUNTIFS, AVERAGEIFS, and INDEX/MATCH.</li>
+    <li>Turning numbers into charts and plain-language findings.</li>
+  </ul>
+
+  <div class="btns">
+    <a class="btn" href="Starbucks_Sales_Analysis.xlsx" download>Download Excel file</a>
+    <a class="btn" href="index.html#projects">Back to portfolio</a>
+  </div>
+</div>
+</body>
+</html>
