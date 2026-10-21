@@ -137,6 +137,10 @@
   .job { max-width: 780px; margin: 0 auto; border-left: 3px solid var(--teal); }
   .job .meta, .meta { font-family: "Montserrat", sans-serif; font-size: 13px; color: var(--teal) !important; letter-spacing: .5px; margin-bottom: 10px; }
 
+  .job + .job { margin-top: 26px; }
+  .job-list { margin-top: 4px; padding-left: 20px; }
+  .job-list li { list-style: disc; color: var(--muted); font-size: 16px; margin-bottom: 5px; }
+
   .contact { text-align: center; }
   .contact p.lead { max-width: 620px; margin: 0 auto 34px; font-size: 18px; }
 
@@ -277,7 +281,7 @@
           <p class="tech">HTML • CSS • JavaScript</p>
           <p>A web application designed to help users organize and track job applications. Users can keep track of applications, interviews, waiting results, and rejected applications.</p>
           <p class="learned"><strong>What I learned:</strong> Web development, user interface design, JavaScript, organizing information.</p>
-          <div class="links"><a href="JobTracker.html" target="_blank" rel="noopener">Live Demo →</a><a href="https://github.com/HaiHuynh25/JobTracker-project.git">GitHub →</a></div>
+          <div class="links"><a href="JobTracker.html" target="_blank" rel="noopener">Live Demo →</a><a href="https://github.com/HaiHuynh25/JobTracker-project" target="_blank" rel="noopener">GitHub →</a></div>
         </article>
 
         <article class="card reveal">
@@ -290,7 +294,7 @@
         <article class="card reveal">
           <h3>Starbucks Sales Data Analysis</h3>
           <p class="tech">Microsoft Excel • Power BI • Data Analysis</p>
-          <p>Analyzed real-world Starbucks sales data from Michigan to examine revenue and product sales. Used Excel to identify sales patterns and estimate daily sales for products such as cappuccinos and Pumpkin Spice Lattes.</p>
+          <p>An analysis of Starbucks-style sample sales data that examines revenue and product sales. Used Excel formulas and a Power BI dashboard to find sales patterns and estimate daily sales for products such as cappuccinos and Pumpkin Spice Lattes.</p>
           <div class="links"><a href="starbucks-analysis.html" target="_blank" rel="noopener">View Analysis →</a><a href="Starbuck-Practise_Analyst.pdf" target="_blank" rel="noopener">Power BI Dashboard →</a></div>
         </article>
 
@@ -299,7 +303,7 @@
           <p class="tech">Python</p>
           <p>A command-line program that records spending and summarizes it by category and month. Data is saved in a CSV file, with input validation and unit tests.</p>
           <p class="learned"><strong>What I learned:</strong> Python functions, file handling, organizing data with dictionaries, input validation, unit testing.</p>
-          <div class="links"><a href="https://github.com/HaiHuynh25/expense-tracker-python.git" target="_blank" rel="noopener">View Code on GitHub →</a></div>
+          <div class="links"><a href="https://github.com/HaiHuynh25/expense-tracker-python" target="_blank" rel="noopener">View Code on GitHub →</a></div>
         </article>
 
       </div>
@@ -308,31 +312,25 @@
 
   <!-- 5. EXPERIENCE -->
   <section class="section" id="experience">
-    <div class="section__layout">
-      <div class="section__head"><h2 class="title">Experience</h2></div>
-      <div>
-        <article class="entry">
-          <div class="entry__when">Feb 2025 – Jun 2026<br /><span class="entry__note">Part-time, Federal Work-Study</span></div>
-          <div>
-            <h3>IT Support Assistant</h3>
-            <p class="entry__where">Oakland University</p>
-            <ul class="entry__list">
-              <li>Assisted students with basic technical issues involving university software and computer systems.</li>
-              <li>Troubleshot login issues, software errors, and connectivity problems.</li>
-              <li>Documented technical issues and the steps taken to resolve them.</li>
-              <li>Communicated technical information clearly to users with different levels of technical knowledge.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="entry">
-          <div class="entry__when">Southfield, MI</div>
-          <div>
-            <h3>Waiter</h3>
-            <p class="entry__where">Pho Chopstix</p>
-            <p class="desc">Manage customer orders, communicate with kitchen staff, and provide service to a diverse range of customers in a fast-paced environment. Developed strong communication, teamwork, multitasking, problem-solving, and time-management skills.</p>
-          </div>
-        </article>
-      </div>
+    <div class="section__inner">
+      <h2 class="title reveal">Experience</h2><div class="title-rule"></div>
+
+      <article class="card job reveal">
+        <h3>IT Support Assistant — Oakland University</h3>
+        <p class="meta">Feb 2025 – Jun 2026 &nbsp;|&nbsp; Part-time, Federal Work-Study</p>
+        <ul class="job-list">
+          <li>Assisted students with basic technical issues involving university software and computer systems.</li>
+          <li>Troubleshot login issues, software errors, and connectivity problems.</li>
+          <li>Documented technical issues and the steps taken to resolve them.</li>
+          <li>Communicated technical information clearly to users with different levels of technical knowledge.</li>
+        </ul>
+      </article>
+
+      <article class="card job reveal">
+        <h3>Waiter — Pho Chopstix</h3>
+        <p class="meta">Southfield, MI</p>
+        <p>Manage customer orders, communicate with kitchen staff, and provide service to a diverse range of customers in a fast-paced environment. Developed strong communication, teamwork, multitasking, problem-solving, and time-management skills.</p>
+      </article>
     </div>
   </section>
 
@@ -350,7 +348,7 @@
           <h3>Oakland Community College</h3>
           <p>Computer Information Systems</p>
           <p class="meta" style="margin-top:8px">Graduated: May 2026</p>
-          <div class="links"><a href="OCC - eDiploma.pdf" target="_blank" rel="noopener">View eDiploma →</a></div>
+          <div class="links"><a href="OCC%20-%20eDiploma.pdf" target="_blank" rel="noopener">View eDiploma →</a></div>
         </article>
       </div>
     </div>
@@ -368,7 +366,7 @@
         <a href="resume.pdf" target="_blank" rel="noopener" class="btn">Resume</a>
       </div>
       <p class="email-line reveal">
-        Email me at <a href="mailto:haihuynh@oakland.edu" class="email-addr">haikiet969753@gmail.com</a>
+        Email me at <a href="mailto:haikiet969753@gmail.com" class="email-addr">haikiet969753@gmail.com</a>
         <button type="button" class="copy-btn" id="copyEmail">Copy</button>
       </p>
     </div>
@@ -442,7 +440,7 @@
 /* ---------- Copy email ---------- */
 const copyBtn = document.getElementById("copyEmail");
 copyBtn.addEventListener("click", async () => {
-  const email = "haihuynh@oakland.edu";
+  const email = "haikiet969753@gmail.com";
   try {
     await navigator.clipboard.writeText(email);
   } catch (e) {
